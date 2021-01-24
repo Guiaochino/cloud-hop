@@ -1,0 +1,6 @@
+WINDOW_WIDTH = 500
+WINDOW_HEIGHT = 800
+
+-- change when the bg change
+VIRTUAL_WIDTH = 1122
+VIRTUAL_HEIGHT = 1795
