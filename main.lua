@@ -47,11 +47,10 @@ end
 function love.draw()
     push:start()
 
-    -- Set background to scrolling clouds sideward and blue background
-    love.graphics.setColor(0.796, 0.902, 0.937, 1)
-    love.graphics.rectangle('fill', 0, 0, VIRTUAL_WIDTH, VIRTUAL_HEIGHT)
+    -- Side Scrolling Background for shroomi
     love.graphics.draw(background, -backgroundScroll, 0)
-    
+
+
     gStateMachine:render()
 
     push:finish()
