@@ -1,6 +1,12 @@
-WINDOW_WIDTH = 500
-WINDOW_HEIGHT = 800
+VIRTUAL_WIDTH = 240
+VIRTUAL_HEIGHT = 320
 
--- change when the bg change
-VIRTUAL_WIDTH = 1122
-VIRTUAL_HEIGHT = 1795
+WINDOW_HEIGHT = 640
+WINDOW_WIDTH = 480
+
+background = love.graphics.newImage('graphics/cloud-backgeound.png')
+backgroundScroll = 0
+BACKGROUND_SCROLL_SPEED = 100
+
+-- change when the bg changed
+BACKGROUND_LOOPING_POINT = 240
