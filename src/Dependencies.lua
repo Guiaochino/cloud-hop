@@ -21,6 +21,7 @@ require 'src/Player'
 require 'src/Tile'
 require 'src/TileMap'
 require 'src/Util'
+require 'src/Ground'
 
 -- entity states
 require 'src/states/entity/PlayerFallingState'

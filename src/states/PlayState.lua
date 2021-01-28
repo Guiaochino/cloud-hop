@@ -3,10 +3,10 @@ PlayState = Class{__includes = BaseState}
 function PlayState:init()
     self.tileMap = self.tileMap
     self.gravityOn = true
-    self.gravityAmount = 0
+    self.gravityAmount = 1
 
     self.player = Player({
-        x = 0, y = 0,
+        x = VIRTUAL_WIDTH / 2, y = VIRTUAL_HEIGHT - 38 - 16,
         width = 32, height = 38,
         texture = 'shroomi',
         stateMachine = StateMachine {
@@ -18,7 +18,7 @@ function PlayState:init()
         self.TileMap
     })
 
-    self.player:changeState('falling')
+    self.player:changeState('idle')
 
 end
 
@@ -31,7 +31,7 @@ end
 
 function PlayState:render()
     love.graphics.push()
-    
+    Ground:render()
     self.player:render()
     love.graphics.pop()
 end

@@ -39,5 +39,7 @@ function PlayerFallingState:update(dt)
         self.player.direction = 'right'
         self.player.x = self.player.x + PLAYER_WALK_SPEED * dt
         self.player:checkRightCollisions(dt)
+    elseif love.keyboard.wasPressed('space') then
+        self.player:changeState('jump')
     end
 end
