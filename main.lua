@@ -1,23 +1,9 @@
 require 'src/Dependencies'
 
-local background = love.graphics.newImage('graphics/Environment/background_temp.png')
-local backgroundScroll = 0
-local BACKGROUND_SCROLL_SPEED = 100
-
--- change when the bg changed
-local BACKGROUND_LOOPING_POINT = 4200
-
-
 function love.load()
     love.graphics.setDefaultFilter('nearest', 'nearest')
-
+    love.graphics.setFont(gFonts['medium'])
     love.window.setTitle('Cloud Hop')
-
-    gFonts = {
-        ['small'] = love.graphics.newFont('fonts/Roboto-Black.ttf', 48),
-        ['medium'] = love.graphics.newFont('fonts/Roboto-Black.ttf', 72),
-        ['large'] = love.graphics.newFont('fonts/Roboto-Black.ttf', 128)
-    }
 
     push:setupScreen(VIRTUAL_WIDTH, VIRTUAL_HEIGHT, WINDOW_WIDTH, WINDOW_HEIGHT, {
         vsync = true,
@@ -51,7 +37,7 @@ function love.keyboard.wasPressed(key)
 end
 
 function love.update(dt)
-    backgroundScroll = (backgroundScroll - BACKGROUND_SCROLL_SPEED * dt) % BACKGROUND_LOOPING_POINT
+    backgroundScroll = (backgroundScroll + BACKGROUND_SCROLL_SPEED * dt) % BACKGROUND_LOOPING_POINT
     
     gStateMachine:update(dt)
 
@@ -61,7 +47,9 @@ end
 function love.draw()
     push:start()
 
-    love.graphics.draw(background, 0, -backgroundScroll)
+    -- Side Scrolling Background for shroomi
+    love.graphics.draw(background, -backgroundScroll, 0)
+
 
     gStateMachine:render()
 
