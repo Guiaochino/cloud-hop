@@ -18,7 +18,7 @@ function PlayState:init()
         self.TileMap
     })
 
-    self.player:changeState('falling')
+    self.player:changeState('idle')
 
 end
 
@@ -31,7 +31,7 @@ end
 
 function PlayState:render()
     love.graphics.push()
-    
+    Ground:render()
     self.player:render()
     love.graphics.pop()
 end
