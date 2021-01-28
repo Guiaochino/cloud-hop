@@ -3,7 +3,7 @@ PlayState = Class{__includes = BaseState}
 function PlayState:init()
     self.tileMap = self.tileMap
     self.gravityOn = true
-    self.gravityAmount = 0
+    self.gravityAmount = 1
 
     self.player = Player({
         x = VIRTUAL_WIDTH / 2, y = VIRTUAL_HEIGHT - 38 - 16,
