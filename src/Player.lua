@@ -38,3 +38,8 @@ function Player:checkRightCollisions(dt)
     end
 end
 
+function Player:checkObjectCollisions()
+    local collidedObjects = {}
+    return collidedObjects
+end
+

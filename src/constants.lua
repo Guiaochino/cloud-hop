@@ -4,9 +4,8 @@ VIRTUAL_HEIGHT = 320
 WINDOW_HEIGHT = 640
 WINDOW_WIDTH = 480
 
-background = love.graphics.newImage('graphics/cloud-bg-colored.png')
 backgroundScroll = 0
-BACKGROUND_SCROLL_SPEED = 20
+BACKGROUND_SCROLL_SPEED = 10
 
 -- change when the bg changed
 BACKGROUND_LOOPING_POINT = 497
@@ -38,7 +37,7 @@ TILE_SETS = TILE_SETS_WIDE * TILE_SETS_TALL
 PLAYER_WALK_SPEED = 60
 
 -- player jumping velocity
-PLAYER_JUMP_VELOCITY = -230
+PLAYER_JUMP_VELOCITY = -50
 
 TILE_ID_EMPTY = 5
 TILE_ID_GROUND = 3

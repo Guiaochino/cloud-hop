@@ -21,6 +21,7 @@ require 'src/Player'
 require 'src/Tile'
 require 'src/TileMap'
 require 'src/Util'
+require 'src/Ground'
 
 -- entity states
 require 'src/states/entity/PlayerFallingState'
@@ -39,7 +40,10 @@ gTextures = {
     ['tiles'] = love.graphics.newImage('graphics/Environment/tiles.png'),
     ['toppers'] = love.graphics.newImage('graphics/Environment/tile_tops.png'),
     ['clouds'] = love.graphics.newImage('graphics/Environment/clouds.png'),
-    ['shroomi'] = love.graphics.newImage('graphics/shroomi.png')
+    ['shroomi'] = love.graphics.newImage('graphics/shroomi.png'),
+
+    ['sky'] = love.graphics.newImage('graphics/cloud-bg-colored.png'),
+    ['ground'] = love.graphics.newImage('graphics/ground.png')
 }
 
 gFrames = {

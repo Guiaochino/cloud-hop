@@ -48,7 +48,7 @@ function love.draw()
     push:start()
 
     -- Side Scrolling Background for shroomi
-    love.graphics.draw(background, -backgroundScroll, 0)
+    love.graphics.draw(gTextures['sky'], -backgroundScroll, 0)
 
 
     gStateMachine:render()
