@@ -14,7 +14,6 @@ function PlayerJumpState:init(player, gravity)
 end
 
 function PlayerJumpState:enter(params)
-    gSounds['jump']:play()
     self.player.dy = PLAYER_JUMP_VELOCITY
 end
 
