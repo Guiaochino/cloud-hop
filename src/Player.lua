@@ -40,10 +40,6 @@ end
 
 function Player:checkObjectCollisions()
     local collidedObjects = {}
-
-    if (self.y + 2) + (self.height - 4) >= ground.y and self.y + 2 <= ground.y + ground.width then
-        return true
-    end
     return collidedObjects
 end
 
