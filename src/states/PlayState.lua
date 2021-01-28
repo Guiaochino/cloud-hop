@@ -6,7 +6,7 @@ function PlayState:init()
     self.gravityAmount = 0
 
     self.player = Player({
-        x = 0, y = 0,
+        x = VIRTUAL_WIDTH / 2, y = VIRTUAL_HEIGHT - 38 - 16,
         width = 32, height = 38,
         texture = 'shroomi',
         stateMachine = StateMachine {
