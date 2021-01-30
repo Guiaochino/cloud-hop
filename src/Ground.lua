@@ -18,5 +18,5 @@ function Ground:collidable(target)
 end
 
 function Ground:render()
-    love.graphics.draw(gTextures['ground'], self.x, self.y)
+    love.graphics.draw(gTextures['ground'], 0, 300)
 end

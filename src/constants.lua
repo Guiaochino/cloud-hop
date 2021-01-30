@@ -50,3 +50,9 @@ player = {
 COLLIDABLE_TILES = {
     TILE_ID_GROUND
 }
+
+
+CLOUD_SCROLL = 40
+
+cloudWidth = 16
+cloudHeight = 16
