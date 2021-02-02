@@ -4,9 +4,8 @@ VIRTUAL_HEIGHT = 320
 WINDOW_HEIGHT = 640
 WINDOW_WIDTH = 480
 
-background = love.graphics.newImage('graphics/cloud-bg-colored.png')
 backgroundScroll = 0
-BACKGROUND_SCROLL_SPEED = 20
+BACKGROUND_SCROLL_SPEED = 10
 
 -- change when the bg changed
 BACKGROUND_LOOPING_POINT = 497
@@ -51,3 +50,9 @@ player = {
 COLLIDABLE_TILES = {
     TILE_ID_GROUND
 }
+
+
+CLOUD_SCROLL = 40
+
+cloudWidth = 16
+cloudHeight = 16
