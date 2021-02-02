@@ -18,6 +18,8 @@ function Entity:init(def)
     self.stateMachine = def.stateMachine
 
     self.direction = 'left'
+    
+    self.level = def.level
 
    
 
