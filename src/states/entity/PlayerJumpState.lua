@@ -28,12 +28,6 @@ function PlayerJumpState:update(dt)
     end
 
     self.player.y = self.player.y + (self.player.dy * dt)
-    
-   
-    -- if we get a collision up top, go into the falling state immediately
-    if (tileLeft and tileRight) and (tileLeft:collidable() or tileRight:collidable()) then
-        self.player.dy = 0
-        self.player:changeState('falling')
 
     -- else test our sides for blocks
     elseif love.keyboard.isDown('left') then
@@ -45,6 +39,4 @@ function PlayerJumpState:update(dt)
         self.player.x = self.player.x + PLAYER_WALK_SPEED * dt
         self.player:checkRightCollisions(dt)
     end
-
-   
 end
