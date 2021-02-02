@@ -10,7 +10,7 @@ function PlayState:init()
     self.backgroundY = 0
    
     self.player = Player({
-        x = VIRTUAL_WIDTH / 2, y = VIRTUAL_HEIGHT - 38 - 16,
+        x = VIRTUAL_WIDTH / 2, y = VIRTUAL_HEIGHT - 38 - 40,
         width = 32, height = 38,
         texture = 'shroomi',
         stateMachine = StateMachine {
