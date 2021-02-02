@@ -4,6 +4,10 @@ function PlayState:init()
     self.tileMap = self.tileMap
     self.gravityOn = true
     self.gravityAmount = 1
+    self.camX = 0
+    self.camY = 0
+    self.level = LevelMaker.generate(10, 100)
+    self.backgroundY = 0
    
     self.player = Player({
         x = VIRTUAL_WIDTH / 2, y = VIRTUAL_HEIGHT - 38 - 16,
@@ -15,7 +19,7 @@ function PlayState:init()
             ['jump'] = function() return PlayerJumpState(self.player, self.gravityAmount) end,
             ['falling'] = function() return PlayerFallingState(self.player, self.gravityAmount) end
         },
-        self.TileMap
+        level = self.level
     })
 
     self.player:changeState('idle')
@@ -23,18 +27,25 @@ function PlayState:init()
 end
 
 function PlayState:update(dt)
-
+    self.level:clear()
     -- update player and level
     self.player:update(dt)
+    self.level:update(dt)
+    self.updateCamera()
     
 end
 
 function PlayState:render()
-
- 
     love.graphics.push()
-    Ground:render()
     Clouds:render()
+    love.graphics.translate(-math.floor(self.camX), -math.floor(self.camY))
     self.player:render()
     love.graphics.pop()
+end
+
+function PlayState:updateCamera()
+    self.camY = math.max(0,
+        math.min(16 - VIRTUAL_WIDTH,
+        self.player.y - (VIRTUAL_HEIGHT / 2 - 8)))
+    self.backgroundY = (self.camY / 3) % 256
 end
