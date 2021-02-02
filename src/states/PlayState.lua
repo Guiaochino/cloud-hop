@@ -31,7 +31,7 @@ function PlayState:update(dt)
     -- update player and level
     self.player:update(dt)
     self.level:update(dt)
-    self.updateCamera()
+    self:updateCamera()
     
 end
 
