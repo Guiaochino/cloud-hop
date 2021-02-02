@@ -39,6 +39,7 @@ function PlayState:render()
     love.graphics.push()
     Clouds:render()
     love.graphics.translate(-math.floor(self.camX), -math.floor(self.camY))
+    self.level:render()
     self.player:render()
     love.graphics.pop()
 end
