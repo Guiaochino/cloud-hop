@@ -16,13 +16,17 @@ require 'src/states/TitleScreenState'
 
 -- general
 require 'src/Animation'
+require 'src/Clouds'
 require 'src/Entity'
+require 'src/GameObject'
+require 'src/GameLevel'
+require 'src/LevelMaker'
 require 'src/Player'
 require 'src/Tile'
 require 'src/TileMap'
 require 'src/Util'
-require 'src/Ground'
-require 'src/Clouds'
+
+
 
 -- entity states
 require 'src/states/entity/PlayerFallingState'
@@ -39,23 +43,13 @@ gFonts = {
 
 gTextures = {
     ['tiles'] = love.graphics.newImage('graphics/Environment/tiles.png'),
-    ['toppers'] = love.graphics.newImage('graphics/Environment/tile_tops.png'),
-  
     ['shroomi'] = love.graphics.newImage('graphics/shroomi.png'),
-
     ['sky'] = love.graphics.newImage('graphics/cloud-bg-colored.png'),
     ['ground'] = love.graphics.newImage('graphics/ground.png')
 }
 
 gFrames = {
     ['tiles'] = GenerateQuads(gTextures['tiles'], TILE_SIZE, TILE_SIZE),
-    ['toppers'] = GenerateQuads(gTextures['toppers'], TILE_SIZE, TILE_SIZE),
-  
+    ['sky'] = GenerateQuads(gTextures['sky'], 240, 320),
     ['shroomi'] = GenerateQuads(gTextures['shroomi'], 32, 38)
 }
-
-gFrames['tilesets'] = GenerateTileSets(gFrames['tiles'], 
-    TILE_SETS_WIDE, TILE_SETS_TALL, TILE_SET_WIDTH, TILE_SET_HEIGHT)
-
-gFrames['toppersets'] = GenerateTileSets(gFrames['toppers'], 
-    TOPPER_SETS_WIDE, TOPPER_SETS_TALL, TILE_SET_WIDTH, TILE_SET_HEIGHT)
