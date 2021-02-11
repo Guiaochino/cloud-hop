@@ -16,7 +16,7 @@ require 'src/states/TitleScreenState'
 
 -- general
 require 'src/Animation'
-require 'src/Clouds'
+-- require 'src/Clouds'
 require 'src/Entity'
 require 'src/GameObject'
 require 'src/GameLevel'
@@ -45,7 +45,10 @@ gTextures = {
     ['tiles'] = love.graphics.newImage('graphics/Environment/tiles.png'),
     ['shroomi'] = love.graphics.newImage('graphics/shroomi.png'),
     ['sky'] = love.graphics.newImage('graphics/cloud-bg-colored.png'),
-    ['ground'] = love.graphics.newImage('graphics/ground.png')
+    ['ground'] = love.graphics.newImage('graphics/ground.png'),
+    ['whiteC'] = love.graphics.newImage('graphics/cloud1.png'),
+    ['darkC'] = love.graphics.newImage('graphics/cloud2.png'),
+    ['thunderC'] = love.graphics.newImage('graphics/cloud3.png')
 }
 
 gFrames = {
