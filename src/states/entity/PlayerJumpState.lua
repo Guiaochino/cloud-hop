@@ -33,10 +33,10 @@ function PlayerJumpState:update(dt)
     if love.keyboard.isDown('left') then
         self.player.direction = 'left'
         self.player.x = self.player.x - PLAYER_WALK_SPEED * dt
-        self.player:checkLeftCollisions(dt)
+        self.player:checkObjectCollisions()
     elseif love.keyboard.isDown('right') then
         self.player.direction = 'right'
         self.player.x = self.player.x + PLAYER_WALK_SPEED * dt
-        self.player:checkRightCollisions(dt)
+        self.player:checkObjectCollisions()
     end
 end
