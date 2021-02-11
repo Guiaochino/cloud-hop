@@ -31,11 +31,11 @@ function PlayerWalkingState:update(dt)
         if love.keyboard.isDown('left') then
             self.player.x = self.player.x - PLAYER_WALK_SPEED * dt
             self.player.direction = 'left'
-            self.player:checkLeftCollisions(dt)
+            self.player:checkObjectCollisions()
         elseif love.keyboard.isDown('right') then
             self.player.x = self.player.x + PLAYER_WALK_SPEED * dt
             self.player.direction = 'right'
-            self.player:checkRightCollisions(dt)
+            self.player:checkObjectCollisions()
         end
     end
 
