@@ -48,11 +48,16 @@ gTextures = {
     ['ground'] = love.graphics.newImage('graphics/ground.png'),
     ['whiteC'] = love.graphics.newImage('graphics/cloud1.png'),
     ['darkC'] = love.graphics.newImage('graphics/cloud2.png'),
-    ['thunderC'] = love.graphics.newImage('graphics/cloud3.png')
+    ['thunderC'] = love.graphics.newImage('graphics/cloud3.png'),
+
+    -- textures for icons for TitleScreenState
+    ['setting'] = love.graphics.newImage('graphics/icons/settings-icon.png'),
+    ['basket'] = love.graphics.newImage('graphics/icons/basket-icon.png'),
+    ['change-avatar'] = love.graphics.newImage('graphics/icons/change_avatar-icon.png'),
+    ['back'] = love.graphics.newImage('graphics/icons/back-icon.png')
 }
 
 gFrames = {
     ['tiles'] = GenerateQuads(gTextures['tiles'], TILE_SIZE, TILE_SIZE),
-    ['sky'] = GenerateQuads(gTextures['sky'], 240, 320),
     ['shroomi'] = GenerateQuads(gTextures['shroomi'], 32, 38)
 }
