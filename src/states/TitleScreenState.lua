@@ -26,14 +26,19 @@ function TitleScreenState:render()
     love.graphics.setColor(1, 1, 1, 1)
     love.graphics.printf("Cloud Hop", 1, VIRTUAL_HEIGHT / 2 - 70, VIRTUAL_WIDTH, 'center')
 
-    -- Overlay the icons at the top og the layer
+    -- Overlay the icons at the top of the layer
     love.graphics.draw(gTextures['setting'], 0, 0)
     love.graphics.draw(gTextures['basket'], VIRTUAL_WIDTH - 34, 2)
     love.graphics.draw(gTextures['change-avatar'], VIRTUAL_WIDTH - 36, VIRTUAL_HEIGHT - 36)
 
+    --Dispplay highest score achieved
+    love.graphics.setFont(gFonts['medium'])
+    love.graphics.setColor(0, 0, 0, 1)
+    love.graphics.printf("HIGHSCORE : 0", 1, (VIRTUAL_HEIGHT / 2) - 10, VIRTUAL_WIDTH, 'center')
+
     -- Let the user know how to start the game
     love.graphics.setFont(gFonts['small'])
     love.graphics.setColor(0, 0, 0, 1)
-    love.graphics.printf("Press \"Enter\" to Start the Game", 1, VIRTUAL_HEIGHT / 2, VIRTUAL_WIDTH, 'center')
+    love.graphics.printf("Press \"Enter\" to Start the Game", 1, (VIRTUAL_HEIGHT / 2) + 20, VIRTUAL_WIDTH, 'center')
 
 end

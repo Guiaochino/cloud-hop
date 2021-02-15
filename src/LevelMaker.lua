@@ -10,8 +10,6 @@
 
 LevelMaker = Class{}
 
-hasKey = false
-
 function LevelMaker.generate(width, height)
     local entities = {}
     local objects = {}
