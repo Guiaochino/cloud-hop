@@ -36,4 +36,6 @@ function SettingScreenState:render()
     love.graphics.rectangle('line', 20, VIRTUAL_HEIGHT - 76, VIRTUAL_WIDTH - 40, 46, 15, 15)
     love.graphics.rectangle('line', 20, VIRTUAL_HEIGHT - 76, VIRTUAL_WIDTH - 40, 46, 15, 15)
     love.graphics.rectangle('line', 20, VIRTUAL_HEIGHT - 76, VIRTUAL_WIDTH - 40, 46, 15, 15)
+    love.graphics.setFont(gFonts['medium'])
+    love.graphics.printf("QUIT", 2, VIRTUAL_HEIGHT - 60, VIRTUAL_WIDTH, 'center')
 end
