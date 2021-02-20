@@ -1,6 +1,16 @@
 SettingScreenState = Class{__includes = BaseState}
 
 function SettingScreenState:update(dt)
+    --mouse update
+    local x, y = love.mouse.getPosition()
+
+    if (x < 75 and y < 43) then
+        if (love.mouse.isDown(1)) then
+            gStateMachine:change('title')
+        end
+    end
+    
+    
     if love.keyboard.wasPressed('escape') then
         gStateMachine:change('title')
     end
