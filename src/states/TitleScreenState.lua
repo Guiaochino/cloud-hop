@@ -59,5 +59,8 @@ function TitleScreenState:render()
     love.graphics.printf("Press \"Enter\" to Start the Game", 1, (VIRTUAL_HEIGHT / 2) + 20, VIRTUAL_WIDTH, 'center')
     
     --love.graphics.print(mouse)
+    love.graphics.printf("Press \"S\" to go to Settings", 1, (VIRTUAL_HEIGHT / 2) + 80, VIRTUAL_WIDTH, 'center')
+    love.graphics.printf("Press \"C\" to change Character", 1, (VIRTUAL_HEIGHT / 2) + 90, VIRTUAL_WIDTH, 'center')
+    love.graphics.printf("Press \"Esc\" to Quit the Game", 1, (VIRTUAL_HEIGHT / 2) + 100, VIRTUAL_WIDTH, 'center')
 
 end

@@ -45,8 +45,9 @@ function PlayState:render()
 end
 
 function PlayState:updateCamera()
+    
     self.camY = math.max(0,
         math.min(40 * 500 - VIRTUAL_HEIGHT,
-        self.player.y - (VIRTUAL_HEIGHT / 2 - 8)))
-    self.backgroundY = (self.camY / 3) % 256
+        self.player.y - (VIRTUAL_HEIGHT / 2 - 16)))
+
 end
