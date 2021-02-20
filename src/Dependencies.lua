@@ -12,6 +12,7 @@ require 'src/states/PlayState'
 require 'src/states/TitleScreenState'
 require 'src/states/SettingScreenState'
 require 'src/states/ChangeScreenState'
+require 'src/states/GameOverState'
 
 -- general
 require 'src/Animation'
