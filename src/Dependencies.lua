@@ -4,15 +4,15 @@ Class = require 'lib/class'
 
 require 'src/constants'
 
+-- State Machines
 require 'src/StateMachine'
-
 require 'src/states/BaseState'
-
 require 'src/states/StartState'
-
 require 'src/states/PlayState'
-
 require 'src/states/TitleScreenState'
+require 'src/states/SettingScreenState'
+require 'src/states/ChangeScreenState'
+require 'src/states/GameOverState'
 
 -- general
 require 'src/Animation'

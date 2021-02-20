@@ -1,16 +1,9 @@
+
 Clouds = Class{}
 
-clouds = love.graphics.newImage('graphics/clouds.png')
-whiteC = love.graphics.newQuad(0, 0, 64, 16, clouds:getDimensions())
-darkC = love.graphics.newQuad(64, 0, 64, 16, clouds:getDimensions())
-thunderC = love.graphics.newQuad(128, 0, 64, 16, clouds:getDimensions())
-
-
-function Clouds:init()
-    self.x = math.random(VIRTUAL_WIDTH / 4, VIRTUAL_WIDTH - 10)
-
-    self.y= VIRTUAL_HEIGHT
-
+function Clouds:init(x, y)
+    self.x = x
+    self.y= y
     self.cloudwidth = clouds:getWidth()
 
 end
