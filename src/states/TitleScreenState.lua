@@ -1,6 +1,23 @@
 TitleScreenState = Class{__includes = BaseState}
 
 function TitleScreenState:update(dt)
+    --mouse handling
+
+    local x, y = love.mouse.getPosition()
+
+    --mouse = "Position is" .. x .. "and" .. y
+
+    if (x < 61 and y < 58) then
+        if (love.mouse.isDown(1)) then
+            gStateMachine:change('settings')
+        end
+    elseif (x > 406 and y > 573) then
+        if (love.mouse.isDown(1)) then
+            gStateMachine:change('changeAvatar')
+        end
+    end
+    
+    
     if love.keyboard.wasPressed('enter') or love.keyboard.wasPressed('return') then
         gStateMachine:change('play')
     
@@ -40,5 +57,7 @@ function TitleScreenState:render()
     love.graphics.setFont(gFonts['small'])
     love.graphics.setColor(0, 0, 0, 1)
     love.graphics.printf("Press \"Enter\" to Start the Game", 1, (VIRTUAL_HEIGHT / 2) + 20, VIRTUAL_WIDTH, 'center')
+    
+    --love.graphics.print(mouse)
 
 end
