@@ -1,24 +1,21 @@
 SettingScreenState = Class{__includes = BaseState}
 
-function SettingScreenState:update(dt)
-    --mouse update
-    local x, y = love.mouse.getPosition()
+function SettingScreenState:enter()
+    back = Icon(ICON_DEFS['back'].texture, ICON_DEFS['back'].x, ICON_DEFS['back'].y, ICON_DEFS['back'].width, ICON_DEFS['back'].height)
+end
 
-    if (x < 75 and y < 43) then
-        if (love.mouse.isDown(1)) then
+function SettingScreenState:update(dt)
+    
+    if love.keyboard.wasPressed('escape') or distanceBetween(back.x, back.y) < ICON_SIZE then
+        if love.mouse.isDown(1) then
             gStateMachine:change('title')
         end
-    end
-    
-    
-    if love.keyboard.wasPressed('escape') then
-        gStateMachine:change('title')
     end
 end
 
 function SettingScreenState:render()
     -- Back button 
-    love.graphics.draw(gTextures['back'], 5, 0)
+    back:render()
 
     -- Design for UI goes here
     love.graphics.setColor(0, 0, 0, 0.5)
@@ -45,11 +42,11 @@ function SettingScreenState:render()
     love.graphics.printf("HIGHSCORE : 0", 1, (VIRTUAL_HEIGHT / 2) - 10, VIRTUAL_WIDTH, 'center')
 
     -- Display button
-    love.graphics.rectangle('line', 20, VIRTUAL_HEIGHT - 76, VIRTUAL_WIDTH - 40, 46, 15, 15)
-    love.graphics.rectangle('line', 20, VIRTUAL_HEIGHT - 76, VIRTUAL_WIDTH - 40, 46, 15, 15)
-    love.graphics.rectangle('line', 20, VIRTUAL_HEIGHT - 76, VIRTUAL_WIDTH - 40, 46, 15, 15)
-    love.graphics.setFont(gFonts['medium'])
-    love.graphics.printf("QUIT", 2, VIRTUAL_HEIGHT - 60, VIRTUAL_WIDTH, 'center')
+    -- love.graphics.rectangle('line', 20, VIRTUAL_HEIGHT - 76, VIRTUAL_WIDTH - 40, 46, 15, 15)
+    -- love.graphics.rectangle('line', 20, VIRTUAL_HEIGHT - 76, VIRTUAL_WIDTH - 40, 46, 15, 15)
+    -- love.graphics.rectangle('line', 20, VIRTUAL_HEIGHT - 76, VIRTUAL_WIDTH - 40, 46, 15, 15)
+    -- love.graphics.setFont(gFonts['medium'])
+    -- love.graphics.printf("QUIT", 2, VIRTUAL_HEIGHT - 60, VIRTUAL_WIDTH, 'center')
 
     -- Display prompts
     love.graphics.printf("Press \"A\" to toggle Audio", 1, (VIRTUAL_HEIGHT / 2) + 40, VIRTUAL_WIDTH, 'center')

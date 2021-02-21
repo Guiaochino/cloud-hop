@@ -1,35 +1,31 @@
 TitleScreenState = Class{__includes = BaseState}
 
+function TitleScreenState:enter()
+    settings = Icon(ICON_DEFS['setting'].texture, ICON_DEFS['setting'].x, ICON_DEFS['setting'].y,
+                ICON_DEFS['setting'].width, ICON_DEFS['setting'].height)
+    
+    change_avatar = Icon(ICON_DEFS['change-avatar'].texture, ICON_DEFS['change-avatar'].x, ICON_DEFS['change-avatar'].y,
+                    ICON_DEFS['change-avatar'].width, ICON_DEFS['change-avatar'].height)
+    
+    basket = Icon(ICON_DEFS['basket'].texture, ICON_DEFS['basket'].x, ICON_DEFS['basket'].y, ICON_DEFS['basket'].width,
+                ICON_DEFS['basket'].height)
+end
+
 function TitleScreenState:update(dt)
-    --mouse handling
 
-    local x, y = love.mouse.getPosition()
-
-    --mouse = "Position is" .. x .. "and" .. y
-
-    if (x < 61 and y < 58) then
-        if (love.mouse.isDown(1)) then
-            gStateMachine:change('settings')
-        end
-    elseif (x > 406 and y > 573) then
-        if (love.mouse.isDown(1)) then
-            gStateMachine:change('changeAvatar')
-        end
-    end
-    
-    
     if love.keyboard.wasPressed('enter') or love.keyboard.wasPressed('return') then
         gStateMachine:change('play')
-    
+        
     elseif love.keyboard.wasPressed('escape') then
         love.event.quit()
 
-    elseif love.keyboard.wasPressed('s') or love.keyboard.wasPressed('S') then
+    elseif love.keyboard.wasPressed('s') or love.keyboard.wasPressed('S') or distanceBetween(settings.x, settings.y) < ICON_SIZE and love.mouse.isDown(1) then
         gStateMachine:change('settings')
 
-    elseif love.keyboard.wasPressed('c') or love.keyboard.wasPressed('C') then
+    elseif love.keyboard.wasPressed('c') or love.keyboard.wasPressed('C') or distanceBetween(change_avatar.x, change_avatar.y) < ICON_SIZE and love.mouse.isDown(1) then
         gStateMachine:change('changeAvatar')
     end
+
 end
 
 function TitleScreenState:render()
@@ -44,9 +40,9 @@ function TitleScreenState:render()
     love.graphics.printf("Cloud Hop", 1, VIRTUAL_HEIGHT / 2 - 70, VIRTUAL_WIDTH, 'center')
 
     -- Overlay the icons at the top of the layer
-    love.graphics.draw(gTextures['setting'], 0, 0)
-    love.graphics.draw(gTextures['basket'], VIRTUAL_WIDTH - 34, 2)
-    love.graphics.draw(gTextures['change-avatar'], VIRTUAL_WIDTH - 36, VIRTUAL_HEIGHT - 36)
+    settings:render()
+    basket:render()
+    change_avatar:render()
 
     --Dispplay highest score achieved
     love.graphics.setFont(gFonts['medium'])

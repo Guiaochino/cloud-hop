@@ -26,7 +26,9 @@ require 'src/Tile'
 require 'src/TileMap'
 require 'src/Util'
 
-
+-- Icons
+require 'src/icons'
+require 'src/Icon'
 
 -- entity states
 require 'src/states/entity/PlayerFallingState'
