@@ -26,9 +26,11 @@ require 'src/Tile'
 require 'src/TileMap'
 require 'src/Util'
 
--- Icons
-require 'src/icons'
-require 'src/Icon'
+-- UI
+require 'src/UI/icons'
+require 'src/UI/Icon'
+require 'src/UI/ButtonUI'
+require 'src/UI/Checkbox'
 
 -- entity states
 require 'src/states/entity/PlayerFallingState'

@@ -3,10 +3,11 @@
 ICON_DEFS = {
     ['setting'] = {
         texture = 'setting',
-        x = 0,
-        y = VIRTUAL_HEIGHT - ICON_SIZE,
+        x = VIRTUAL_WIDTH - ICON_SIZE,
+        y = 0,
         width = ICON_SIZE,
         height = ICON_SIZE,
+        toState = 'settings'
     },
 
     ['change-avatar'] = {
@@ -15,6 +16,7 @@ ICON_DEFS = {
         y = VIRTUAL_HEIGHT - ICON_SIZE,
         width = ICON_SIZE,
         height = ICON_SIZE,
+        toState = 'changeAvatar'
     },
 
     ['back'] = {
@@ -23,12 +25,13 @@ ICON_DEFS = {
         y = 0,
         width = ICON_SIZE,
         height = ICON_SIZE,
+        toState = 'title'
     },
 
     ['basket'] = {
         texture = 'basket',
         x = VIRTUAL_WIDTH - ICON_SIZE,
-        y = 0,
+        y = ICON_SIZE,
         width = ICON_SIZE,
         height = ICON_SIZE
     }

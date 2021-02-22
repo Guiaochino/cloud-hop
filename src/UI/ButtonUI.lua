@@ -1,0 +1,44 @@
+
+ButtonUI = Class{}
+
+function ButtonUI:init(label, x, y, width, height)
+    self.label = label
+    self.x = x
+    self.y = y
+    self.width = width
+    self.height = height
+
+    self.normal = {0.1, 0.1, 0.1, 0.75}
+    self.gray = {0.1, 0.1, 0.1, 1}
+
+    self.color = self.normal
+
+    self.buttonSize = math.sqrt((self.width)^2 + (self.height)^2)
+end
+
+function ButtonUI:update(dt)
+    local left_click = love.mouse.isDown(1)
+
+    if distanceBetween(self.x, self.y) < self.buttonSize and not left_click then
+        self.color = self.gray
+
+    elseif distanceBetween(self.x, self.y) < self.buttonSize and left_click then
+        love.event.quit()
+    else
+        self.color = self.normal
+    end
+
+end
+
+function ButtonUI:render()
+    local r, g, b, a = love.graphics.getColor()
+    love.graphics.setColor(self.color)
+    love.graphics.rectangle('fill', self.x, self.y, self.width, self.height, 8, 8)
+    love.graphics.setColor(r, g, b, a)
+
+    local font = love.graphics.getFont()
+    local fontWidth = font:getWidth(self.label)
+    local fontHeight = font:getHeight(self.label)
+
+    love.graphics.print(self.label, self.x + (self.width / 2) - (fontWidth / 2), self.y + fontHeight/2)
+end
