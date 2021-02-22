@@ -36,6 +36,9 @@ TILE_SETS = TILE_SETS_WIDE * TILE_SETS_TALL
 -- player walking speed
 PLAYER_WALK_SPEED = 60
 
+-- ICON SIZE
+ICON_SIZE = 32
+
 -- player jumping velocity
 PLAYER_JUMP_VELOCITY = -250
 
@@ -50,9 +53,3 @@ player = {
 COLLIDABLE_TILES = {
     TILE_ID_GROUND
 }
-
-
-CLOUD_SCROLL = 40
-
-cloudWidth = 16
-cloudHeight = 16
