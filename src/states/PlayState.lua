@@ -46,8 +46,10 @@ end
 
 function PlayState:updateCamera()
     
-    self.camY = math.max(0,
-        math.min(40 * 500 - VIRTUAL_HEIGHT,
-        self.player.y - (VIRTUAL_HEIGHT / 2 - 16)))
+    if self.player.y >= VIRTUAL_HEIGHT/2 then
+        self.camY = 0
+    elseif self.player.y < VIRTUAL_HEIGHT/2 then
+        self.camY = -(VIRTUAL_HEIGHT / 2 - self.player.y)
+    end
 
 end

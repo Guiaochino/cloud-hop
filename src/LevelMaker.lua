@@ -13,8 +13,15 @@ LevelMaker = Class{}
 function LevelMaker.generate(width, height)
     local entities = {}
     local objects = {}
+
+    local isAlive = true
+    local counter = 1
+
+    local timer = 0
+
+    local spawnDark = math.random(0, 2)
     
-    for y = 1, height do
+    for y = 1, height  do
         
         table.insert(objects,
             GameObject {
@@ -28,51 +35,51 @@ function LevelMaker.generate(width, height)
                 solid = true,
 
                 onCollide = function (obj)
-                    player:changeState('idle')
+                    if obj.hit then
+                        player:changeState('idle')
+                    end
                 end
-            }
-        )
+            })
+    
+    end
 
-        if math.random(80) == 1 then
-            table.insert(objects,
-                GameObject {
-                texture = 'whiteC',
-                x = math.random(64, VIRTUAL_WIDTH - 64),
-                y = math.random(1, 230),
-                width = 64,
-                height = 16,
-                collidable = true,
-                hit = true,
-                solid = true
-                }
-            )
+    
 
-            table.insert(objects,
-                GameObject {
-                texture = 'darkC',
-                x = math.random(64, VIRTUAL_WIDTH - 64),
-                y = math.random(1, 230),
-                width = 64,
-                height = 16,
-                collidable = true,
-                hit = true,
-                solid = true
-                }
-            )
+    for y = VIRTUAL_HEIGHT / 2, -height * 10, -1 do
+        
+        for x = 0, 2 do
 
-            table.insert(objects,
-                GameObject {
-                texture = 'thunderC',
-                x = math.random(64, VIRTUAL_WIDTH - 64),
-                y = math.random(1, 230),
-                width = 64,
-                height = 16,
-                collidable = true,
-                hit = true,
-                solid = true
-                }
-            )
+            -- chance to Spawn Dark Clouds
+            if math.random(10) == spawnDark then
+                table.insert(objects, GameObject{
+                    texture = 'dark_cloud',
+                    x = x * (VIRTUAL_WIDTH / 3) + 8,
+                    y = y * CLOUD_GAP,
+                    width = 64,
+                    height = 16,
+                    collidable = true,
+                    hit = true,
+                    solid = true
+                })
+
+            --Chance to Spawn Ordinary Clouds
+            elseif math.random(2) == x and spawnDark ~= x then
+                table.insert(objects, GameObject{
+                    texture = 'ordinary_cloud',
+                    x = x * (VIRTUAL_WIDTH / 3) + 8,
+                    y = y * CLOUD_GAP,
+                    width = 64,
+                    height = 16, 
+                    collidable = true,
+                    solid = true,
+
+                    onCollide = function(obj)
+                        player:changeState('idle')
+                    end
+                })
+            end
         end
+
     end
 
     return GameLevel(entities, objects)
