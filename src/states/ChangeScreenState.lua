@@ -4,7 +4,7 @@ function ChangeScreenState:enter()
     back = Icon(ICON_DEFS['back'].texture, ICON_DEFS['back'].x, ICON_DEFS['back'].y, ICON_DEFS['back'].width,
             ICON_DEFS['back'].height, ICON_DEFS['back'].toState)
 
-    basket = Icon(ICON_DEFS['basket'].texture, ICON_DEFS['basket'].x, ICON_DEFS['basket'].y, ICON_DEFS['basket'].width,
+    basket = Icon(ICON_DEFS['basket'].texture, ICON_DEFS['basket'].x, 0, ICON_DEFS['basket'].width,
                 ICON_DEFS['basket'].height)
 end
 

@@ -16,7 +16,7 @@ function love.load()
         ['play'] = function () return PlayState() end,
         ['settings'] = function() return SettingScreenState() end,
         ['changeAvatar'] = function() return ChangeScreenState() end,
-        ['gameOver'] = function() return GameOverState() end
+        ['gameOver'] = function() return GameOverState() end,
     }
     gStateMachine:change('title')
 

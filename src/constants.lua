@@ -39,6 +39,13 @@ PLAYER_WALK_SPEED = 60
 -- ICON SIZE
 ICON_SIZE = 32
 
+--Button Size
+buttonWidth = VIRTUAL_WIDTH - 100
+buttonHeight = 20
+
+-- Cloud Properties for Spawning
+CLOUD_GAP = 50
+
 -- player jumping velocity
 PLAYER_JUMP_VELOCITY = -250
 

@@ -50,9 +50,9 @@ gTextures = {
     ['shroomi'] = love.graphics.newImage('graphics/shroomi.png'),
     ['sky'] = love.graphics.newImage('graphics/cloud-bg-colored.png'),
     ['ground'] = love.graphics.newImage('graphics/ground.png'),
-    ['whiteC'] = love.graphics.newImage('graphics/cloud1.png'),
-    ['darkC'] = love.graphics.newImage('graphics/cloud2.png'),
-    ['thunderC'] = love.graphics.newImage('graphics/cloud3.png'),
+    ['ordinary_cloud'] = love.graphics.newImage('graphics/cloud1.png'),
+    ['dark_cloud'] = love.graphics.newImage('graphics/cloud2.png'),
+    ['thunder_cloud'] = love.graphics.newImage('graphics/cloud3.png'),
 
     -- textures for icons for TitleScreenState
     ['setting'] = love.graphics.newImage('graphics/icons/settings-icon.png'),

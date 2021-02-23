@@ -6,8 +6,8 @@ function SettingScreenState:enter()
 
     buttonWidth = VIRTUAL_WIDTH - 100
     buttonHeight = 20
-    quitButton = ButtonUI('QUIT', VIRTUAL_WIDTH / 2 - buttonWidth / 2, VIRTUAL_HEIGHT - (buttonHeight + 10), buttonWidth, buttonHeight)
-
+    quitButton = ButtonUI('QUIT', VIRTUAL_WIDTH / 2 - buttonWidth / 2, VIRTUAL_HEIGHT - (buttonHeight + 10), buttonWidth, buttonHeight, 'title')
+    
     audioControl = Checkbox('AUDIO', VIRTUAL_WIDTH / 2, VIRTUAL_HEIGHT / 2)
 end
 
@@ -26,11 +26,11 @@ function SettingScreenState:render()
     -- Back button 
     back:render()
 
-    love.graphics.setColor(0, 0, 0, 1)
-    love.graphics.printf("HIGHSCORE : 0", 1, (VIRTUAL_HEIGHT / 2) - 10, VIRTUAL_WIDTH, 'center')
-
     -- Render UI here
     quitButton:render()
+
+    love.graphics.setColor(0, 0, 0, 1)
+    love.graphics.printf("HIGHSCORE : 0", 1, (VIRTUAL_HEIGHT / 2) - 10, VIRTUAL_WIDTH, 'center')
 
 end
 
