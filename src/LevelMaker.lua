@@ -65,7 +65,7 @@ function LevelMaker.generate(width, height)
                 })
 
             --Chance to Spawn Ordinary Clouds
-            elseif maspawnDark ~= x and tryChance ~= y then
+            elseif spawnDark ~= x and tryChance ~= y then
                 table.insert(objects, GameObject{
                     texture = 'ordinary_cloud',
                     x = x * (VIRTUAL_WIDTH / 3) + 8,
