@@ -52,6 +52,7 @@ function love.mousepressed(x, y, button, istoush, presses)
 end
 
 function love.update(dt)
+
     backgroundScroll = (backgroundScroll + BACKGROUND_SCROLL_SPEED * dt) % BACKGROUND_LOOPING_POINT
     
     mouseX = love.mouse.getX()
