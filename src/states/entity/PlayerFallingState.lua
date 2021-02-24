@@ -16,8 +16,12 @@ function PlayerFallingState:update(dt)
     self.player.currentAnimation:update(dt)
     self.player.dy = self.player.dy + self.gravity
     self.player.y = self.player.y + (self.player.dy * dt)
-        
-    if love.keyboard.isDown('left') then
+    
+    if self.player.dy > 350  then
+        gAudio['death-fall']:play()
+        gStateMachine:change('gameOver')
+        currentScore = score
+    elseif love.keyboard.isDown('left') then
         self.player.direction = 'left'
         self.player.x = math.max(2, self.player.x - PLAYER_WALK_SPEED * dt)
         self.player:checkLeftCollisions(dt)

@@ -11,7 +11,7 @@ function PlayState:init()
    
     self.player = Player({
         x = VIRTUAL_WIDTH / 2, y = VIRTUAL_HEIGHT - 38 - 40,
-        width = 32, height = 38,
+        width = 32 / 3, height = 38,
         texture = 'shroomi',
         stateMachine = StateMachine {
             ['idle'] = function() return PlayerIdleState(self.player) end,

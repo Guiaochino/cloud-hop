@@ -14,13 +14,7 @@ function LevelMaker.generate(width, height)
     local entities = {}
     local objects = {}
 
-    local counter = 1
-
-    local timer = 0
-
-    local spawnDark = math.random(0, 2)
-
-    local tryChance = math.random(VIRTUAL_WIDTH / 2, -height * 10)
+    local generateEnd = height * 10
 
     for y = 1, height  do
         
@@ -44,20 +38,20 @@ function LevelMaker.generate(width, height)
     
     end
 
-    
-
     for y = VIRTUAL_WIDTH / 3, -height * 10, -1.5 do
+
+        local spawnDark = math.random(0 , 2) or 1
         
         for x = 0, 2 do
 
             -- chance to Spawn Dark Clouds
-            if math.random(13) == 1 then
+            if math.random(10) == spawnDark then
                 table.insert(objects, GameObject{
                     texture = 'dark_cloud',
                     x = x * (VIRTUAL_WIDTH / 3) + 8,
                     y = y * CLOUD_GAP,
-                    width = 64,
-                    height = 16,
+                    width = 60,
+                    height = 10,
                     collidable = true,
                     hit = true,
                     solid = true,
@@ -66,56 +60,51 @@ function LevelMaker.generate(width, height)
                         gAudio['game-over']:play()
                         gStateMachine:change('gameOver')
                         currentScore = score
+                        
                     end
-                    
+                        
                 })
-                -- math.random(1, 3) == x and spawnDark ~= x and damn ~= y
+            -- math.random(1, 3) == x and spawnDark ~= x and damn ~= y
             --Chance to Spawn Ordinary Clouds
-            elseif spawnDark ~= x and tryChance ~= y then
+            elseif math.random(3) ~= x and x ~= spawnDark then
                 table.insert(objects, GameObject{
                     texture = 'ordinary_cloud',
                     x = math.random(0, 2) * (VIRTUAL_WIDTH / 3) + 8,
                     y = y * CLOUD_GAP,
-                    width = 64,
-                    height = 16,
+                    width = 60,
+                    height = 10,
                     collidable = true,
                     hit = false,
                     solid = true,
 
-                    onCollide = function(obj)
-                       
+                    onCollide = function ()
+                        
                     end
                 })
-            end
-        end
 
-    end
-
-    for y = 250, -height * 10, -2 do
-        for x = 0, 7 do
-            if math.random(50) == 1 then
+            elseif math.random(7) == 1 then
                 table.insert(objects, GameObject{
+                    x = x * (VIRTUAL_WIDTH / 3) + 24,
+                    y = y * CLOUD_GAP - 20,
                     texture = 'apple',
-                    x = x * (VIRTUAL_WIDTH / 7) + 8,
-                    y = y * CLOUD_GAP + 10,
                     width = 24,
                     height = 24,
                     collidable = true,
                     hit = true,
                     consumable = true,
-
+                
                     onConsume = function(obj)
                         gAudio['collect']:play()
                         table.remove(obj)
                         score = score + 1
                     end
-
                 })
-            elseif math.random(50) == 2 then
+            
+            elseif math.random(7) == 2 then
                 table.insert(objects, GameObject{
                     texture = 'banana',
-                    x = x * (VIRTUAL_WIDTH / 7) + 8,
-                    y = y * CLOUD_GAP + 10,
+                    x = x * (VIRTUAL_WIDTH / 3) + 24,
+                    y = y * CLOUD_GAP - 20,
                     width = 24,
                     height = 24,
                     collidable = true,
@@ -129,11 +118,11 @@ function LevelMaker.generate(width, height)
                     end
 
                 })
-            elseif math.random(50) == 3 then
+            elseif math.random(7) == 3 then
                 table.insert(objects, GameObject{
                     texture = 'berry',
-                    x = x * (VIRTUAL_WIDTH / 7) + 8,
-                    y = y * CLOUD_GAP + 10,
+                    x = x * (VIRTUAL_WIDTH / 3) + 24,
+                    y = y * CLOUD_GAP - 20,
                     width = 24,
                     height = 24,
                     collidable = true,
@@ -147,11 +136,11 @@ function LevelMaker.generate(width, height)
                     end
                     
                 })
-            elseif math.random(50) == 4 then
+            elseif math.random(7) == 4 then
                 table.insert(objects, GameObject{
                     texture = 'coco',
-                    x = x * (VIRTUAL_WIDTH / 7) + 8,
-                    y = y * CLOUD_GAP + 10,
+                    x = x * (VIRTUAL_WIDTH / 3) + 24,
+                    y = y * CLOUD_GAP - 20,
                     width = 24,
                     height = 24,
                     collidable = true,
@@ -165,11 +154,11 @@ function LevelMaker.generate(width, height)
                     end
                     
                 })
-            elseif math.random(50) == 5 then
+            elseif math.random(7) == 5 then
                 table.insert(objects, GameObject{
                     texture = 'grapes',
-                    x = x * (VIRTUAL_WIDTH / 7) + 8,
-                    y = y * CLOUD_GAP + 10,
+                    x = x * (VIRTUAL_WIDTH / 3) + 24,
+                    y = y * CLOUD_GAP - 20,
                     width = 24,
                     height = 24,
                     collidable = true,
@@ -183,11 +172,11 @@ function LevelMaker.generate(width, height)
                     end
                     
                 })
-            elseif math.random(50) == 6 then
+            elseif math.random(7) == 6 then
                 table.insert(objects, GameObject{
                     texture = 'kiwi',
-                    x = x * (VIRTUAL_WIDTH / 7) + 8,
-                    y = y * CLOUD_GAP + 10,
+                    x = x * (VIRTUAL_WIDTH / 3) + 24,
+                    y = y * CLOUD_GAP - 20,
                     width = 24,
                     height = 24,
                     collidable = true,
@@ -201,11 +190,11 @@ function LevelMaker.generate(width, height)
                     end
                     
                 })
-            elseif math.random(50) == 7 then
+            elseif math.random(7) == 7 then
                 table.insert(objects, GameObject{
                     texture = 'orange',
-                    x = x * (VIRTUAL_WIDTH / 7) + 8,
-                    y = y * CLOUD_GAP + 10,
+                    x = x * (VIRTUAL_WIDTH / 3) + 24,
+                    y = y * CLOUD_GAP - 20,
                     width = 24,
                     height = 24,
                     collidable = true,
@@ -219,8 +208,31 @@ function LevelMaker.generate(width, height)
                     end
                     
                 })
+
+            elseif y == generateEnd then
+                table.insert(objects, GameObject{
+                    texture = 'easter-egg',
+                    x = x * (VIRTUAL_WIDTH / 3) + 24,
+                    y = -generateEnd - 16,
+                    width = 16,
+                    height = 16,
+                    collidable = true,
+                    hit = true,
+                    consumable = true,
+
+                    onConsume = function(obj)
+                        gAudio['easter']:play()
+                        player.score = score + 100
+                        currentScore = score
+                        level_width = width
+                        level_height = height * 2
+                        LevelMaker.generate(level_width, level_height)
+                        gStateMachine:change('play')
+                    end
+                })
             end
         end
+
     end
 
     return GameLevel(entities, objects)

@@ -6,7 +6,7 @@ function PlayerWalkingState:init(player)
     self.player = player
     self.animation = Animation {
         frames = {2, 3},
-        interval = 0.1
+        interval = 0.2
     }
     self.player.currentAnimation = self.animation
 end
@@ -45,7 +45,6 @@ function PlayerWalkingState:update(dt)
     end
 
     
-
     if love.keyboard.wasPressed('space') then
         self.player:changeState('jump')
     end

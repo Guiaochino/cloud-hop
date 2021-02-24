@@ -11,6 +11,12 @@ end
 function GameOverState:update(dt)
     retryButton:update()
     quitButton:update()
+
+    if love.keyboard.wasPressed('enter') or love.keyboard.wasPressed('return') then
+        gStateMachine:change('play')
+    elseif love.keyboard.wasPressed('escape') then
+        gStateMachine:change('title')
+    end
 end
 
 function GameOverState:render()

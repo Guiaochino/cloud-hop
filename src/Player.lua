@@ -19,8 +19,8 @@ function Player:checkLeftCollisions(dt)
 
     
     -- place player outside the X bounds on one of the tiles to reset any overlap
-    if (tileTopLeft and tileBottomLeft) and (tileTopLeft:collidable() or tileBottomLeft:collidable()) then
-        self.x = (tileTopLeft.x - 1) * TILE_SIZE + tileTopLeft.width - 1
+    if self.x == 0 then
+        self.x = 0
     else
         
         self.y = self.y - 1
@@ -40,8 +40,8 @@ function Player:checkRightCollisions(dt)
    
    
     -- place player outside the X bounds on one of the tiles to reset any overlap
-    if (tileTopRight and tileBottomRight) and (tileTopRight:collidable() or tileBottomRight:collidable()) then
-        self.x = (tileTopRight.x - 1) * TILE_SIZE - self.width
+    if self.x == VIRTUAL_WIDTH - self.width then
+        self.x = VIRTUAL_WIDTH - self.width
     else --just trying to add
 
         self.y = self.y - 1

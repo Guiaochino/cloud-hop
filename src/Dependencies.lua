@@ -69,17 +69,22 @@ gTextures = {
     ['setting'] = love.graphics.newImage('graphics/icons/settings-icon.png'),
     ['basket'] = love.graphics.newImage('graphics/icons/basket-icon.png'),
     ['change-avatar'] = love.graphics.newImage('graphics/icons/change_avatar-icon.png'),
-    ['back'] = love.graphics.newImage('graphics/icons/back-icon.png')
+    ['back'] = love.graphics.newImage('graphics/icons/back-icon.png'),
+
+    ['easter-egg'] = love.graphics.newImage('graphics/Powerups/potion_0.png')
 }
 
 gFrames = {
     ['tiles'] = GenerateQuads(gTextures['tiles'], TILE_SIZE, TILE_SIZE),
-    ['shroomi'] = GenerateQuads(gTextures['shroomi'], 32, 38)
+    ['shroomi'] = GenerateQuads(gTextures['shroomi'], 32, 38),
 }
 
 gAudio = {
     ['main'] = love.audio.newSource('sounds/main-background-music.wav', 'static'),
     ['jump'] = love.audio.newSource('sounds/bounce-3.wav', 'static'),
     ['collect'] = love.audio.newSource('sounds/collect-3.wav', 'static'),
-    ['game-over'] = love.audio.newSource('sounds/electricshock.wav', 'static')
+    ['game-over'] = love.audio.newSource('sounds/electricshock.wav', 'static'),
+    ['death-fall'] = love.audio.newSource('sounds/dead.wav', 'static'),
+    ['click'] = love.audio.newSource('sounds/select.wav', 'static'),
+    ['easter'] = love.audio.newSource('sounds/collect.wav', 'static')
 }

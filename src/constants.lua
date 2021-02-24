@@ -44,16 +44,20 @@ buttonWidth = VIRTUAL_WIDTH - 100
 buttonHeight = 20
 
 -- Cloud Properties for Spawning
-CLOUD_GAP = 50
+CLOUD_GAP = 100
 
 -- player jumping velocity
-PLAYER_JUMP_VELOCITY = -110
+PLAYER_JUMP_VELOCITY = -350
 
 TILE_ID_EMPTY = 5
 TILE_ID_GROUND = 3
 
 player = { 
     1, 2, 3, 4, 5
+}
+
+fruits = {
+    1, 2, 3, 4, 5, 6, 7
 }
 
 -- table of tiles that should trigger a collision
