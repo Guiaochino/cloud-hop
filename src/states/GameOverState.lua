@@ -14,7 +14,11 @@ function GameOverState:update(dt)
 end
 
 function GameOverState:render()
-
+    if highScore >= currentScore then
+        highScore = highScore
+    elseif currentScore >= score then
+        highScore = currentScore
+    end
     -- Render Buttons
     retryButton:render()
     quitButton:render()
