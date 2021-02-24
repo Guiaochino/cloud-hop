@@ -44,6 +44,7 @@ function Player:checkObjectCollisions()
     for k, object in pairs(self.level.objects) do
         if object:collides(self) then
             if object.solid then
+                object.onCollide(self)
                 table.insert(collidedObjects, object)
             elseif object.consumable then
                 object.onConsume(self)

@@ -51,7 +51,7 @@ function TitleScreenState:render()
     --Dispplay highest score achieved
     love.graphics.setFont(gFonts['medium'])
     love.graphics.setColor(0, 0, 0, 1)
-    love.graphics.printf("HIGHSCORE : 0", 1, (VIRTUAL_HEIGHT / 2) - 10, VIRTUAL_WIDTH, 'center')
+    love.graphics.printf("HIGHSCORE : ".. highScore, 1, (VIRTUAL_HEIGHT / 2) - 10, VIRTUAL_WIDTH, 'center')
 
     -- Let the user know how to start the game
     love.graphics.setFont(gFonts['small'])
