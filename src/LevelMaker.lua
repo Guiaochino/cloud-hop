@@ -63,7 +63,8 @@ function LevelMaker.generate(width, height)
                     solid = true,
 
                     onCollide = function(obj)
-                        isAlive = false
+                        gStateMachine:change('gameOver')
+                        currentScore = score
                     end
                     
                 })
@@ -80,7 +81,7 @@ function LevelMaker.generate(width, height)
                     solid = true,
 
                     onCollide = function(obj)
-                        isAlive = false
+                       
                     end
                 })
             end
