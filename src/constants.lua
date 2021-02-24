@@ -47,7 +47,7 @@ buttonHeight = 20
 CLOUD_GAP = 50
 
 -- player jumping velocity
-PLAYER_JUMP_VELOCITY = -250
+PLAYER_JUMP_VELOCITY = -100
 
 TILE_ID_EMPTY = 5
 TILE_ID_GROUND = 3
@@ -60,3 +60,6 @@ player = {
 COLLIDABLE_TILES = {
     TILE_ID_GROUND
 }
+
+-- player's score
+score = 0
