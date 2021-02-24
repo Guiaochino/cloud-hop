@@ -33,11 +33,13 @@ function PlayerJumpState:update(dt)
     -- else test our sides for blocks
     if love.keyboard.isDown('left') then
         self.player.direction = 'left'
-        self.player.x = self.player.x - PLAYER_WALK_SPEED * dt
-        self.player:checkObjectCollisions()
+        self.player.x = math.max(2, self.player.x - PLAYER_WALK_SPEED * dt)
+        --self.player:checkObjectCollisions()
+        self.player:checkLeftCollisions(dt)
     elseif love.keyboard.isDown('right') then
         self.player.direction = 'right'
-        self.player.x = self.player.x + PLAYER_WALK_SPEED * dt
-        self.player:checkObjectCollisions()
+        self.player.x = math.min(VIRTUAL_WIDTH - 20, self.player.x + PLAYER_WALK_SPEED * dt)
+        --self.player:checkObjectCollisions()
+        self.player:checkRightCollisions(dt)
     end
 end
