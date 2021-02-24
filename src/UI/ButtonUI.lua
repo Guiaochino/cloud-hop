@@ -23,8 +23,8 @@ end
 
 function ButtonUI:update(dt)
 
-    left_click = love.mouse.isDown(1)
-    in_bound = mouse_bound(self, mousePosition.x, mousePosition.y)
+    local left_click = love.mouse.isDown(1)
+    local in_bound = mouse_bound(self, mousePosition.x, mousePosition.y)
 
     if in_bound and not left_click then
         self.color = self.gray

@@ -8,7 +8,7 @@ function SettingScreenState:enter()
     buttonHeight = 20
     quitButton = ButtonUI('QUIT', VIRTUAL_WIDTH / 2 - buttonWidth / 2, VIRTUAL_HEIGHT - (buttonHeight + 10), buttonWidth, buttonHeight)
     
-    audioControl = Checkbox('AUDIO', VIRTUAL_WIDTH / 2, VIRTUAL_HEIGHT / 2)
+    audioControl = Checkbox('AUDIO', VIRTUAL_WIDTH / 2 - 100 / 2, VIRTUAL_HEIGHT / 2 - 50, 100, 20)
 end
 
 function SettingScreenState:update(dt)

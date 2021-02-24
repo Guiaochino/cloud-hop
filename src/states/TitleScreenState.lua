@@ -10,7 +10,6 @@ function TitleScreenState:enter()
     
     basket = Icon(ICON_DEFS['basket'].texture, ICON_DEFS['basket'].x, ICON_DEFS['basket'].y, ICON_DEFS['basket'].width,
                 ICON_DEFS['basket'].height, ICON_DEFS['change-avatar'].toState)
-
 end
 
 function TitleScreenState:update(dt)
