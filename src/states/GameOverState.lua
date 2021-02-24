@@ -27,6 +27,6 @@ function GameOverState:render()
     love.graphics.setColor(0, 0, 0, 1)
 
     -- Render Text Score and HIGHSCORE
-    love.graphics.printf("SCORE : 0", 1, (VIRTUAL_HEIGHT / 2) - 30, VIRTUAL_WIDTH, 'center')
-    love.graphics.printf("HIGHSCORE : 0", 1, (VIRTUAL_HEIGHT / 2) - 10, VIRTUAL_WIDTH, 'center')
+    love.graphics.printf("SCORE : ".. currentScore, 1, (VIRTUAL_HEIGHT / 2) - 30, VIRTUAL_WIDTH, 'center')
+    love.graphics.printf("HIGHSCORE : ".. highScore, 1, (VIRTUAL_HEIGHT / 2) - 10, VIRTUAL_WIDTH, 'center')
 end
