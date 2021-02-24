@@ -57,6 +57,5 @@ function TitleScreenState:render()
     love.graphics.setFont(gFonts['small'])
     love.graphics.setColor(0, 0, 0, 1)
     love.graphics.printf("Press \"Enter\" to Start the Game", 1, (VIRTUAL_HEIGHT / 2) + 20, VIRTUAL_WIDTH, 'center')
-    
 
 end

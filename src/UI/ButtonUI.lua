@@ -23,14 +23,18 @@ end
 
 function ButtonUI:update(dt)
 
-    left_click = love.mouse.isDown(1)
-    in_bound = mouse_bound(self, mousePosition.x, mousePosition.y)
+    local left_click = love.mouse.isDown(1)
+    local in_bound = mouse_bound(self, mousePosition.x, mousePosition.y)
 
     if in_bound and not left_click then
         self.color = self.gray
 
     elseif in_bound and left_click then
-        gStateMachine:change(self.toState)
+        if self.toState == nil then
+            love.event.quit()
+        else
+            gStateMachine:change(self.toState)
+        end
     else
         self.color = self.normal
     end

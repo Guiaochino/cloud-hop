@@ -25,6 +25,10 @@ function love.load()
     love.mouse.mousepressed = {}
 
     mousePosition = {['x'] = nil, ['y'] = nil}
+
+    main_music = gAudio['main']
+    main_music:setLooping(true)
+    main_music:play()
 end
 
 function love.resize(w, h)
