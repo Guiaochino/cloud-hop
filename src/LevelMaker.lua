@@ -14,15 +14,14 @@ function LevelMaker.generate(width, height)
     local entities = {}
     local objects = {}
 
-    local isAlive = true
     local counter = 1
 
     local timer = 0
 
     local spawnDark = math.random(0, 2)
-    
+
     local tryChance = math.random(VIRTUAL_WIDTH / 2, -height * 10)
-    
+
     for y = 1, height  do
         
         table.insert(objects,
@@ -47,12 +46,12 @@ function LevelMaker.generate(width, height)
 
     
 
-    for y = VIRTUAL_HEIGHT / 3, -height * 10, -1.5 do
+    for y = VIRTUAL_WIDTH / 3, -height * 10, -1.5 do
         
         for x = 0, 2 do
 
             -- chance to Spawn Dark Clouds
-            if math.random(12) == 1 then
+            if math.random(13) == 1 then
                 table.insert(objects, GameObject{
                     texture = 'dark_cloud',
                     x = x * (VIRTUAL_WIDTH / 3) + 8,
@@ -61,29 +60,34 @@ function LevelMaker.generate(width, height)
                     height = 16,
                     collidable = true,
                     hit = true,
-                    solid = true
-                })
+                    solid = true,
 
+                    onCollide = function(obj)
+                        isAlive = false
+                    end
+                    
+                })
+                -- math.random(1, 3) == x and spawnDark ~= x and damn ~= y
             --Chance to Spawn Ordinary Clouds
             elseif spawnDark ~= x and tryChance ~= y then
                 table.insert(objects, GameObject{
                     texture = 'ordinary_cloud',
-                    x = x * (VIRTUAL_WIDTH / 3) + 8,
+                    x = math.random(0, 2) * (VIRTUAL_WIDTH / 3) + 8,
                     y = y * CLOUD_GAP,
                     width = 64,
-                    height = 16, 
+                    height = 16,
                     collidable = true,
                     solid = true,
 
                     onCollide = function(obj)
-                        player:changeState('idle')
+                        isAlive = false
                     end
                 })
             end
         end
 
     end
-    
+
     for y = 250, -height * 10, -2 do
         for x = 0, 7 do
             if math.random(50) == 1 then
