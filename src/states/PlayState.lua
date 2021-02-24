@@ -23,6 +23,7 @@ function PlayState:init()
     })
 
     self.player:changeState('idle')
+    score = 0
 
 end
 
