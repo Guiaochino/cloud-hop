@@ -42,6 +42,10 @@ function PlayState:render()
     self.level:render()
     self.player:render()
     love.graphics.pop()
+    
+    love.graphics.setFont(gFonts['medium'])
+    love.graphics.setColor(0, 0, 0)
+    love.graphics.printf(score, 1, 10, VIRTUAL_WIDTH, 'center')
 end
 
 function PlayState:updateCamera()

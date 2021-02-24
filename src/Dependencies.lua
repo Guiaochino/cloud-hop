@@ -53,6 +53,15 @@ gTextures = {
     ['ordinary_cloud'] = love.graphics.newImage('graphics/cloud1.png'),
     ['dark_cloud'] = love.graphics.newImage('graphics/cloud2.png'),
     ['thunder_cloud'] = love.graphics.newImage('graphics/cloud3.png'),
+    
+    -- fruits
+    ['apple'] = love.graphics.newImage('graphics/Fruits/apple.png'),
+    ['banana'] = love.graphics.newImage('graphics/Fruits/banana.png'),
+    ['berry'] = love.graphics.newImage('graphics/Fruits/berry.png'),
+    ['coco'] = love.graphics.newImage('graphics/Fruits/coco.png'),
+    ['grapes'] = love.graphics.newImage('graphics/Fruits/grapes.png'),
+    ['kiwi'] = love.graphics.newImage('graphics/Fruits/kiwi.png'),
+    ['orange'] = love.graphics.newImage('graphics/Fruits/orange.png'),
 
     -- textures for icons for TitleScreenState
     ['setting'] = love.graphics.newImage('graphics/icons/settings-icon.png'),
