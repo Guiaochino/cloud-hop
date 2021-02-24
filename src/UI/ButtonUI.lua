@@ -52,4 +52,6 @@ function ButtonUI:render()
     local fontHeight = font:getHeight(self.label)
 
     love.graphics.print(self.label, self.x + (self.width / 2) - (fontWidth / 2), self.y + fontHeight/2)
+
+    love.graphics.setFont(font)
 end

@@ -63,6 +63,7 @@ function LevelMaker.generate(width, height)
                     solid = true,
 
                     onCollide = function(obj)
+                        gAudio['game-over']:play()
                         gStateMachine:change('gameOver')
                         currentScore = score
                     end
@@ -78,6 +79,7 @@ function LevelMaker.generate(width, height)
                     width = 64,
                     height = 16,
                     collidable = true,
+                    hit = false,
                     solid = true,
 
                     onCollide = function(obj)
@@ -103,6 +105,7 @@ function LevelMaker.generate(width, height)
                     consumable = true,
 
                     onConsume = function(obj)
+                        gAudio['collect']:play()
                         table.remove(obj)
                         score = score + 1
                     end
@@ -120,6 +123,7 @@ function LevelMaker.generate(width, height)
                     consumable = true,
 
                     onConsume = function(obj)
+                        gAudio['collect']:play()
                         table.remove(obj)
                         score = score + 2
                     end
@@ -137,6 +141,7 @@ function LevelMaker.generate(width, height)
                     consumable = true,
 
                     onConsume = function(obj)
+                        gAudio['collect']:play()
                         table.remove(obj)
                         score = score + 5
                     end
@@ -154,6 +159,7 @@ function LevelMaker.generate(width, height)
                     consumable = true,
 
                     onConsume = function(obj)
+                        gAudio['collect']:play()
                         table.remove(obj)
                         score = score + 3
                     end
@@ -171,6 +177,7 @@ function LevelMaker.generate(width, height)
                     consumable = true,
 
                     onConsume = function(obj)
+                        gAudio['collect']:play()
                         table.remove(obj)
                         score = score + 3
                     end
@@ -188,6 +195,7 @@ function LevelMaker.generate(width, height)
                     consumable = true,
 
                     onConsume = function(obj)
+                        gAudio['collect']:play()
                         table.remove(obj)
                         score = score + 5
                     end
@@ -205,6 +213,7 @@ function LevelMaker.generate(width, height)
                     consumable = true,
 
                     onConsume = function(obj)
+                        gAudio['collect']:play()
                         table.remove(obj)
                         score = score + 1
                     end
