@@ -19,6 +19,9 @@ function GameOverState:render()
     elseif currentScore >= score then
         highScore = currentScore
     end
+
+    love.graphics.setFont(gFonts['small'])
+
     -- Render Buttons
     retryButton:render()
     quitButton:render()
