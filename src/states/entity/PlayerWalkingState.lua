@@ -28,14 +28,19 @@ function PlayerWalkingState:update(dt)
 
         -- check to see whether there are any tiles beneath us
         
-        if love.keyboard.isDown('left') then
+        if #collidedObjects == 0 then
+            self.player.dy = 0
+            self.player:changeState('falling')
+        elseif love.keyboard.isDown('left') then
             self.player.x = self.player.x - PLAYER_WALK_SPEED * dt
             self.player.direction = 'left'
-            self.player:checkObjectCollisions()
+            --self.player:checkObjectCollisions()
+            self.player:checkLeftCollisions(dt)
         elseif love.keyboard.isDown('right') then
             self.player.x = self.player.x + PLAYER_WALK_SPEED * dt
             self.player.direction = 'right'
-            self.player:checkObjectCollisions()
+            --self.player:checkObjectCollisions()
+            self.player:checkRightCollisions(dt)
         end
     end
 
