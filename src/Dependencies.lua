@@ -2,6 +2,8 @@ push = require 'lib/push'
 
 Class = require 'lib/class'
 
+Timer = require 'lib/knife/timer'
+
 require 'src/constants'
 
 -- State Machines
@@ -73,4 +75,10 @@ gTextures = {
 gFrames = {
     ['tiles'] = GenerateQuads(gTextures['tiles'], TILE_SIZE, TILE_SIZE),
     ['shroomi'] = GenerateQuads(gTextures['shroomi'], 32, 38)
+}
+
+gAudio = {
+    ['main'] = love.audio.newSource('sounds/main-background-music.wav', 'static'),
+    ['jump'] = love.audio.newSource('sounds/bounce-3.wav', 'static'),
+    ['collect'] = love.audio.newSource('sounds/collect-3.wav', 'static')
 }

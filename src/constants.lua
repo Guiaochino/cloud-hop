@@ -63,3 +63,6 @@ COLLIDABLE_TILES = {
 
 -- player's score
 score = 0
+currentScore = 0
+highScore = 0
+highScoreList = {currentScore, highScore}
