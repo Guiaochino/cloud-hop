@@ -22,12 +22,16 @@ function PlayState:init()
         level = self.level
     })
 
-    self.player:changeState('idle')
+    --self.player:changeState('idle')
+    self.player:changeState('falling')
     score = 0
 
 end
 
 function PlayState:update(dt)
+    --from mario
+    Timer.update(dt)
+    
     self.level:clear()
     -- update player and level
     self.player:update(dt)

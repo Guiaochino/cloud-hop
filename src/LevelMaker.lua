@@ -79,6 +79,7 @@ function LevelMaker.generate(width, height)
                     width = 64,
                     height = 16,
                     collidable = true,
+                    hit = false,
                     solid = true,
 
                     onCollide = function(obj)
