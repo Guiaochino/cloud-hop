@@ -10,6 +10,7 @@ function TitleScreenState:enter()
     
     basket = Icon(ICON_DEFS['basket'].texture, ICON_DEFS['basket'].x, ICON_DEFS['basket'].y, ICON_DEFS['basket'].width,
                 ICON_DEFS['basket'].height, ICON_DEFS['change-avatar'].toState)
+
 end
 
 function TitleScreenState:update(dt)
@@ -57,6 +58,5 @@ function TitleScreenState:render()
     love.graphics.setFont(gFonts['small'])
     love.graphics.setColor(0, 0, 0, 1)
     love.graphics.printf("Press \"Enter\" to Start the Game", 1, (VIRTUAL_HEIGHT / 2) + 20, VIRTUAL_WIDTH, 'center')
-    
 
 end

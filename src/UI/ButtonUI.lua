@@ -30,7 +30,11 @@ function ButtonUI:update(dt)
         self.color = self.gray
 
     elseif in_bound and left_click then
-        gStateMachine:change(self.toState)
+        if self.toState == nil then
+            love.event.quit()
+        else
+            gStateMachine:change(self.toState)
+        end
     else
         self.color = self.normal
     end
