@@ -47,7 +47,7 @@ function LevelMaker.generate(width, height)
 
     
 
-    for y = VIRTUAL_HEIGHT / 2, -height * 10, -1.5 do
+    for y = VIRTUAL_HEIGHT / 3, -height * 10, -1.5 do
         
         for x = 0, 2 do
 
